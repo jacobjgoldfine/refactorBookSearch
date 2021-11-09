@@ -14,7 +14,7 @@ const LoginForm = (props) => {
   // const LoginForm = () => {
   //   const [userFormData, setUserFormData] = useState({ email: "", password: "" });
   //   const [validated] = useState(false);
-  //   const [showAlert, setShowAlert] = useState(false);
+  const [showAlert, setShowAlert] = useState(false);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -32,6 +32,7 @@ const LoginForm = (props) => {
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);
+      setShowAlert(true);
     }
 
     setUserFormData({
@@ -57,14 +58,14 @@ const LoginForm = (props) => {
   //   const { token, user } = await response.json();
   //   console.log(user);
   //   Auth.login(token);
-  // } catch (err) {
+  //  catch (err) {
   //   console.error(err);
   //   setShowAlert(true);
   // }
 
   return (
     <>
-      <Form noValidate validated={validated} onSubmit={handleFormSubmit}>
+      <Form onSubmit={handleFormSubmit}>
         <Alert dismissible onClose={() => setShowAlert(false)} show={showAlert} variant="danger">
           Something went wrong with your login credentials!
         </Alert>
