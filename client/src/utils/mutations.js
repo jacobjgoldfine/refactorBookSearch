@@ -13,7 +13,7 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String, $email: String, $password: String) {
+  mutation createUser($username: String, $email: String, $password: String) {
     addUser(username: $username, email: $email, password: $password) {
       token
       user {
@@ -38,8 +38,8 @@ export const SAVE_BOOK = gql`
 `;
 
 export const REMOVE_BOOK = gql`
-  mutation removeBook($bookID: ID!) {
-    removeBook(bookID: $bookID) {
+  mutation deleteBook($bookID: ID!) {
+    deleteBook(bookID: $bookID) {
       bookID
     }
   }
