@@ -26,7 +26,7 @@ Refactoring a RESTful web application to use GraphQL.
 
 ### Installation
 
-N/A
+Go to the URL at https://fierce-ocean-94654.herokuapp.com/
 
 ### Usage
 
